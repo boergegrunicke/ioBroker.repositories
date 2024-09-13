@@ -1,7 +1,7 @@
 # This workflow will triage pull requests and apply a label based on the
 # paths that are modified in the pull request.
 
-name: Stable Brand-New Info
+name: Stable 0-Day PR Info
 
 #
 # WARNING: 
@@ -27,6 +27,6 @@ jobs:
         with:
           node-version: 18
       - run: npm i
-      - run: npm run stableBrandNewInfo
+      - run: npm run stable0DayPrInfo
         env:
           OWN_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

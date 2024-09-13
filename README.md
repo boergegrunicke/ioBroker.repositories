@@ -17,7 +17,7 @@ This is GitHub project for storage of latest and stable repositories.
 5. Create a PR
 
 ## Add a new adapter to the latest repository (web frontend)
-1. Go to iobroker.dev
+1. Go to [iobroker.dev](https://www.iobroker.dev/)
 2. Log in with GitHub
 3. Open the new adapter
 4. Click on manage
@@ -100,6 +100,13 @@ Additionally, to all above listed points:
 2. Forum thread with question to test the adapter.
 3. Some feedback on [forum](http://forum.iobroker.net).
 4. **Important** Discovery function! If a device can be found automatically (USB, IP) it should be implemented in discovery adapter after (Discovery PR will be merged after stable acceptance).
+
+## Common Rules and Requirements for Commercial Adapters Requiring a License
+ioBroker GmbH sponsors all infrastructure and services necessary for the smooth functioning of the ioBroker world. This encompasses the repository, central components, and platforms such as the Forum. While the usage of open-source "non-commercial" adapters is entirely free, the scenario changes when adapters necessitate a purchase.
+
+For an optimal experience, it is recommended to procure licenses through the official ioBroker Website. The ioBroker GmbH facilitates license management and provides secure components for seamless integration into the adapter. In return for this service, a standard share of 30% of revenues is remitted to ioBroker GmbH. For further information or inquiries, please reach out to info@iobroker.net.
+
+In cases where purchases are managed by the developer directly, and the adapter is intended for inclusion in the repository, a service fee of typically 15% of the revenue is applicable. For details and negotiations regarding this arrangement, please also contact info@iobroker.net.
 
 ## How-to
 ### How to publish on npm
@@ -256,3 +263,8 @@ On every pull request to the repository, the GitHub Action will be triggered (se
 ## Issues to move the latest version of adapter to stable
 Every night the GitHub Action will be triggered at 3:15 (see [stable.yml](.github/workflows/stable.yml) ). It will check the following things:
 - If the latest version is good enough for stable and will create an issue if yes (See [lib/readyForStable.js](lib/readyForStable.js))
+
+## How is the repository build? 
+The repository is build executing `npm run build`. However, this is currently only done on a dedicated server running on AWS.
+However, before build the repository is pulled and thus uses the code from the repository. Hence, modifications how the repo is 
+built should be made against this repository. 
